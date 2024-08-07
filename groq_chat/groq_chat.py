@@ -24,7 +24,7 @@ def generate_response(message: str, context: ContextTypes.DEFAULT_TYPE):
     try:
         for resp in chatbot.chat.completions.create(
             messages=context.user_data.get("messages"),
-            model=context.user_data.get("model", "llama3-8b-8192"),
+            model=context.user_data.get("model", "llama3-70b-8192"),
             stream=True,
         ):
             if resp.choices[0].delta.content:
